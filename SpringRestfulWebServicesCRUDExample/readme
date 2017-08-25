@@ -2,11 +2,22 @@ https://maven.apache.org/pom.html
 
 https://www.java2blog.com/2016/04/spring-restful-web-services-crud-example.html
 - Notes: 
+	
+	Creating a local web service: 
+	
 	- make sure to get rid of compile errors when building the maven clean install
 	- you may need to disconnect from your internet connection if you are using a vpn. this may result in a connection timeout when trying to download your dependencies, e.g. spring jar, during the maven build
 	- if compile errors persist in the java class even though your imports and package definition look fine, e.g. for service classes and beans, you may do a Project > Clean to fix these errors. After doing so, your project should not display those compile errors.
-- Differences between this project and the cxf project used in the grad school project
-	- grad school uses cxf library to create the web service. this one uses spring annotations to drive the web service
+
 	
+	Differences between this project and the cxf project used in the grad school project
+	
+	- grad school uses cxf library to create the web service. this one uses spring annotations to drive the web service
 	- While both use the jackson api for rest services, spring mvc is an easier framework to handle http requests. on the other hand, while cxf also handles http requests and implements JAX-RS (REST) and JAX-WS (SOAP), there is more manual set up in xml configuration. For slightly more detail, see: https://stackoverflow.com/questions/25083045/spring-boot-vs-apache-cxf-for-restful-web-services
 	
+
+	Deploying to Heroku: 
+	
+	- http://nicholaspaulsmith.com/spring-boot-on-heroku/
+	- Need 1) Procfile to point to heroku port and target war or jar file, depending on which one: web: java $JAVA_OPTS -Dserver.port=$PORT -jar target/*.war
+		   2) Check log file in heroku dashboard

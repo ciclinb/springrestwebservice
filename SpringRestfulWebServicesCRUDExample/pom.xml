@@ -6,7 +6,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>SpringRestfulWebServicesWithJSONExample Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -78,6 +77,21 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>-->
+		
+		 <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals><goal>copy-dependencies</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
 
 	</build>
 
